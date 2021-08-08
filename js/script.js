@@ -1,6 +1,6 @@
-function Human(name, sex, lang, age) {
+function Human(name, become, lang, age) {
     this.name = name;
-    this.sex = sex;
+    this.become = become;
     this.lang = lang;
     this.age = age;
 }
