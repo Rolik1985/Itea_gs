@@ -33,24 +33,24 @@ function Human(name, become, age) {
 
 }
 
-var Kent = new Human('Kent', 'male', 24);
-var Serh = new Human('Serh', 'male', 36);
-var Maria = new Human('Maria', 'Female', 66);
-var July = new Human('July', 'male', 25);
-var Rudolf = new Human('Rudolf ', 'male', 19);
+let Kent = new Human('Kent', 'male', 24);
+let Serh = new Human('Serh', 'male', 36);
+let Maria = new Human('Maria', 'Female', 66);
+let July = new Human('July', 'male', 25);
+let Rudolf = new Human('Rudolf ', 'male', 19);
 
-var People = [Kent, Serh, July, Rudolf , Maria];
+let People = [Kent, Serh, July, Rudolf , Maria];
 
-for (var i = 0; i < People.length;i++) {
-    document.write("Все что находится в массиве: " + People[i].name + " | " + People[i].become + " | "  + People[i].age + "<br />");
+for (let i = 0; i < People.length;i++) {
+    document.write(" " + People[i].name + " | " + People[i].become + " | "  + People[i].age + "<br />");
 }
 
 function SortByAge(array, order) { // order = 'asc'-по возрастанию || 'desc'-по убыванию
     if (order == "asc") {
         document.write("Находим самого взрослого кандидата!" + "<br />");
-        var maxValue = Number.NEGATIVE_INFINITY;
-        var maxVname = "";
-        for (var i = 0; i < array.length; i++) {
+        let maxValue = Number.NEGATIVE_INFINITY;
+        let maxVname = "";
+        for (let i = 0; i < array.length; i++) {
             if (array[i].age > maxValue) {
                 maxValue = array[i].age;
                 maxVname = array[i].name;
@@ -59,9 +59,9 @@ function SortByAge(array, order) { // order = 'asc'-по возрастанию 
         return document.write("Имя: " + maxVname + "<br />" + " Возраст: " + maxValue);
 } else if (order == "desc") {
         document.write("Находим самого младшего кандидата!" + "<br />");
-        var minVelue = Number.POSITIVE_INFINITY;
-        var minVname = "";
-        for (var i = 0; i < array.length; i++) {
+        let minVelue = Number.POSITIVE_INFINITY;
+        let minVname = "";
+        for (let i = 0; i < array.length; i++) {
             if (array[i].age < minVelue) {
                 minVelue = array[i].age;
                 minVname = array[i].name;
