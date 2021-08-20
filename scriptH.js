@@ -148,3 +148,57 @@ let hamburger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE)
 // console.log("All topping: " + hamburger.getToppings().join(", "))
 
 console.log(hamburger)
+class Hamburger{
+    constructor(size, stuffing, topping){
+        this.size = size;
+        this.stuffing = stuffing;
+        this.topping = topping;
+
+     }
+       createHamburger(){
+      return new Hamburger('small',['salad','cheese','potato'],['mayonez','spice']);
+      }
+
+   
+
+     get SMALLPRISE(){return 50}//цена маленького гамбургера
+     get LARGEPRISE(){return 100}//цена большого гамбургера
+     get SALADPRISE(){return 20}//цена салата
+     get CHEESEPRISE(){return 10}//цена сыра
+     get POTATOPRISE(){return 15}//цена картошки
+     get MAYONEZPRISE(){return 20}//цена майонеза
+     get SPICEPRISE(){return 15}//цена специй
+
+
+    addStuffin(){
+        let stufPrise = 0;
+        if(this.stuffing =='salad'){stufPrise+=Hamburger.SALADPRISE;}
+        if(this.stuffing =='cheese'){stufPrise+=Hamburger.CHEESEPRISE;}
+        if(this.stuffing =='potato'){stufPrise+=Hamburger.POTATOPRISE;}
+        return stufPrise;
+    }
+
+
+    addTopping(){
+        let topPrise = 0;
+        if(this.topping =='mayonez'){topPrise+=Hamburger.MAYONEZPRISE;}
+        if(this.topping =='spice'){topPrise+=Hamburger.SPICEPRISE;}
+        
+        return topPrise;
+    }
+    
+    calculatePrice(){
+        if(this.size =='small') return Hamburger.SMALLPRISE+this.addStuffin();
+        if(this.size =='large') return Hamburger.LARGEPRISE+this.addStuffin();
+        if(this.stuffing =='salad') return Hamburger.SALADPRISE+this.addStuffin();
+        if(this.stuffing =='cheese') return Hamburger.CHEESEPRISE+this.addStuffin();
+        if(this.stuffing =='potato') return Hamburger.POTATOPRISE+this.addStuffin();
+        if(this.topping =='mayonez') return Hamburger.MAYONEZPRISE+this.addTopping();
+        if(this.topping =='spice') return Hamburger.SPICEPRISE+this.addTopping();
+        // addToppin();
+        else return null;
+    }
+
+}
+ let sample = Hamburger.createHamburger();
+  console.log(sample.calculatePrice())
